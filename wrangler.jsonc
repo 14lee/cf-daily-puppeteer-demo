@@ -4,16 +4,21 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cf-browser-worker",
+	"name": "daily-entertainment",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-04-28",
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./public"
-	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"compatibility_flags": [
+    "nodejs_compat"
+  ],
+	"browser": {
+    "binding": "BROWSER"
+  },
+	"ai": {
+    "binding": "AI"
+  }
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

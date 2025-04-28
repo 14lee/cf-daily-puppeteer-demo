@@ -1,15 +1,23 @@
 {
-	"name": "cf-browser-worker",
+	"name": "long-waterfall-bcd1",
+	"version": "0.0.0",
+	"private": true,
 	"scripts": {
+		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
-		"deploy": "wrangler deploy --minify",
-		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
-	},
-	"dependencies": {
-		"hono": "^4.7.7"
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
 	},
 	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.8.19",
 		"@cloudflare/workers-types": "^4.20250428.0",
+		"typescript": "^5.5.2",
+		"vitest": "~3.0.7",
 		"wrangler": "^4.13.2"
+	},
+	"packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
+	"dependencies": {
+		"@cloudflare/puppeteer": "^1.0.2"
 	}
 }
