@@ -103,9 +103,7 @@ async function getLLMResult(env: Env,) {
 				}
 
 				markdown table output:
-				| 序号 | 新闻标题 | 媒体 | 时间 |
-				| ---- | -------- | ---- | ---- |
-				| 1 | [陈奕天《花椒是狗》什么时候能上](https://k.sina.com.cn/article_2716484561_a1ea43d1001017x2m.html) | 陈奕天全球后援会 | 04-27 14:15 |
+				'##### [陈奕天《花椒是狗》什么时候能上](https://k.sina.com.cn/article_2716484561_a1ea43d1001017x2m.html)'
 				example end
 
 				only markdown
@@ -148,7 +146,7 @@ export default {
 			// const response = await env.AI.run(model, { messages });
 			// const result = response?.response
 
-			const allLinks = tableData?.data?.map((item: any) => `## [${item['新闻标题'].text}](${item['新闻标题'].url})`);
+			const allLinks = tableData?.data?.map((item: any) => `##### [${item['新闻标题'].text}](${item['新闻标题'].url})`);
 			const markdownFormat = '# <font color="info">每日娱乐新闻</font> \n' + allLinks?.reduce((p, n) => p + n + '\n', '') || '';
 			const { trigger } = useWebhook(env.WRANGLER_WEB_HOOK_URL);
 
